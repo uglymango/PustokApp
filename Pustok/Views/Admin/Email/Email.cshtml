@@ -1,0 +1,54 @@
+﻿@model List<EmailRequest>
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="col-sm-12">
+    <div class="page-title-box">
+        <div class="float-end">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Metrica</a>
+                </li><!--end nav-item-->
+                <li class="breadcrumb-item">
+                    <a href="#">Sizes</a>
+                </li><!--end nav-item-->
+                <li class="breadcrumb-item active">Sizes</li>
+            </ol>
+        </div>
+        <h4 class="page-title">Sizes</h4>
+    </div><!--end page-title-box-->
+</div><!--end col-->
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Sender</th>
+                            <th>Receiver</th>
+                            <th>Subject</th>
+                            <th>Content</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var email in Model)
+                        {
+                            <tr>
+                                <td>@email.Name</td>
+                                <td>@email.From</td>
+                                <td>@email.To</td>
+                                <td>@email.Subject</td>
+                                <td>@email.Body</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table><!--end /table-->
+            </div><!--end /tableresponsive-->
+        </div><!--end card-body-->
+    </div><!--end card-->
+</div> <!-- end col -->
